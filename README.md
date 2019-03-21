@@ -45,19 +45,30 @@ Using [Vundle](https://github.com/VundleVim/Vundle.vim)
 Plugin 'zivyangll/git-blame.vim'
 ```
 
-Please setting bindings
------------------
 
-** You must push the map in your vimrc to avoid conflicts with other plugins you may have installed.: **
+Show Git Blame info with a hotkey
+---------------------------------
+
+Add this line to your `.vimrc` settings file
 
 ```vim
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 ```
 
-Quick start guide
------------------
+Press `<leader>s` to see the Git Blame info for the line the cursor is currently on.
 
-just use `<leader>s`
+
+Show Git Blame info always
+--------------------------
+
+Add this line to your `.vimrc` settings file
+
+```vim
+:autocmd CursorMoved * call gitblame#echo()
+```
+
+This will always show the Git Blame info for the currently active line in the status bar.
+
 
 Self-Promotion
 --------------
