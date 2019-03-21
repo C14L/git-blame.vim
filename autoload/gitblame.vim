@@ -53,6 +53,10 @@ function! gitblame#commit_summary(file, line)
         endif
     endfor
 
+    if len(git_blame) < 5
+        return ''
+    endif
+
     let author = matchstr(git_blame[1], 'author \zs.\+$')
     let author_mail = matchstr(git_blame[2], 'author-mail \zs.\+$')
     let timestamp = matchstr(git_blame[3], 'author-time \zs.\+$')
